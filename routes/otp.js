@@ -3,9 +3,8 @@ const axios = require('axios');
 const express = require('express');
 const cors = require('cors')
 const router = express.Router()
-router.options('/sendotp', cors())
 
-router.post('/sendotp', cors(), async (req, res) => {
+router.post('/sendotp', async (req, res) => {
     const { apikey, userEmail, redirectUrl } = req.body
     console.log(req.get('host'));
     console.log(req);
