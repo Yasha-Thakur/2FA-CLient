@@ -5,14 +5,11 @@ const cors = require('cors')
 const router = express.Router()
 
 router.post('/sendotp', async (req, res) => {
-    const { apikey, userEmail, redirectUrl } = req.body
-    console.log(req.get('host'));
-    console.log(req);
-    const clientDomain = process.env.ISCLIENTDOMAIN == 'true' ? req.get('host') : "developersahil.tech"
+    const { apikey, userEmail, redirectUrl, domainName } = req.body
     try {
         const response = await axios.post(`${process.env.BACKENDSERVER}/otp/sendotp`, {
             clientApiKey: apikey,
-            domainname: clientDomain, //TODO change this to dynamic 
+            domainname: domainName,
             emailOfUser: userEmail,
             redirectUrl
         })
@@ -31,7 +28,7 @@ router.post('/sendotp', async (req, res) => {
             message: "Some unknown error occured"
         });
     } catch (error) {
-        if (error.response.data.error) {
+        if (error?.response?.data?.error) {
             return res.status(400).json({
                 success: false,
                 error: true,
