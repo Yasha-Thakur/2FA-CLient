@@ -23,7 +23,7 @@ router.get('/login', (req, res) => {
         res.clearCookie('token')
         res.clearCookie('clientid')
         const successMessage = req.cookies.successMsg
-        clearCookie('successMsg')
+        res.clearCookie('successMsg')
         return res.render('login', { successMessage, errorArray: [], errorMessage: "", body: "" })
     }
     return res.redirect('/dashboard')
