@@ -20,8 +20,8 @@ router.get('/login', (req, res) => {
         return res.render('login', { errorArray: [], successMessage: "", errorMessage: "", body: "" })
     }
     if (req.cookies.successMsg) {
-        clearCookie('token')
-        clearCookie('clientid')
+        res.clearCookie('token')
+        res.clearCookie('clientid')
         const successMessage = req.cookies.successMsg
         clearCookie('successMsg')
         return res.render('login', { successMessage, errorArray: [], errorMessage: "", body: "" })
