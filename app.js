@@ -24,7 +24,7 @@ app.use('/', apiRoutes)
 app.use('/', otpRoutes)
 
 app.get('/', (req, res) => {
-    return res.send('Hello World!')
+    return res.render('homePage')
 })
 
 app.get('/dashboard', async (req, res) => {
@@ -43,17 +43,17 @@ app.get('/dashboard', async (req, res) => {
         })
         const clientname = response.data.clientData.clientname;
         const domains = response.data.clientData.domains;
-        if (req.cookies.errorMessage) {   //! check the purpose of this code
+        if (req.cookies.errorMessage) {
             const errorCookie = req.cookies.errorMessage;
             res.clearCookie('errorMessage');
-            return res.render('dashboard', { verifyMessage: "", errorMessage: errorCookie, clientname, domains })
+            return res.render('dashboard', { verificationErrorMsg: "", errorMessage: errorCookie, clientname, domains })
         }
-        if (req.cookies.verifyMessage) {   //! check the purpose of this code
-            const verifyCookie = req.cookies.verifyMessage;
-            res.clearCookie('verifyMessage');
-            return res.render('dashboard', { verifyMessage: verifyCookie, errorMessage: "", clientname, domains })
+        if (req.cookies.verificationErrorMsg) {
+            const verificationErrorMsg = JSON.parse(req.cookies.verificationErrorMsg)
+            res.clearCookie('verificationErrorMsg');
+            return res.render('dashboard', { verificationErrorMsg, errorMessage: "", clientname, domains })
         }
-        return res.render('dashboard', { verifyMessage: "", errorMessage: "", clientname, domains })
+        return res.render('dashboard', { verificationErrorMsg: "", errorMessage: "", clientname, domains })
     } catch (error) {
         if (error.response.data.error) {
             return res.redirect('/logout')

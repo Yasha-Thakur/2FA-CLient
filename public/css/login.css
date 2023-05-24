@@ -5,21 +5,21 @@
   box-sizing: border-box;
 }
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   font-family: "Outfit", sans-serif;
 }
 
 .nav-bar {
-  background-color: #652c7eb3;
+  background-color: #207398;
   color: #eeeeee;
   display: flex;
   align-items: center;
-  position: fixed;
-  top: 0;
+  /* position: fixed; */
+  /* top: 0; */
   justify-content: space-between;
   padding: 15px 20px;
   width: 100%;
@@ -39,7 +39,7 @@ body {
 
 .link {
   text-decoration: none;
-  color: #652c7eb3;
+  color: #207398;
   font-weight: 600;
 }
 
@@ -48,14 +48,18 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  height: 75%;
+  margin-top: 45px;
+  margin-bottom: 45px;
 }
 
-.h1-login {
-  margin-bottom: 25px;
+hr {
+  width: 100%;
+  margin: 20px 0px 20px 0px;
 }
 
 .error-div {
-  margin: 30px 0px 25px 0px;
+  margin: 0px 0px 25px 0px;
   padding: 10px 10px 10px 25px;
   width: 500px;
   background-color: rgba(236, 120, 120, 0.767);
@@ -88,7 +92,7 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 400px;
+  width: 350px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
 }
@@ -138,7 +142,7 @@ form {
   font-size: 20px;
   font-weight: 600;
   color: #eeeeee;
-  background-color: #652c7eb3;
+  background-color: #207398;
   box-shadow: 0px 4px 10px 1px #00000033;
 }
 

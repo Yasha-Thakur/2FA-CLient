@@ -39,8 +39,9 @@ router.post('/verifydomain', async (req, res) => {
     try {
         const clientid = req.cookies.clientid;
         const token = "Bearer " + req.cookies.token;
+        const domainname = req.body.domainname
         const response = await axios.post(`${process.env.BACKENDSERVER}/domain/verifytxt/${clientid}`, {
-            domainname: req.body.domainname
+            domainname
         }, {
             headers: {
                 "Authorization": token
@@ -52,8 +53,12 @@ router.post('/verifydomain', async (req, res) => {
         return res.send("Some unknown error occured")
     } catch (error) {
         if (error.response.data.error) {
-            const verifyMessage = error.response.data.errorMessage;
-            res.cookie('verifyMessage', verifyMessage, {
+            const domainname = req.body.domainname
+            const verificationErrorMsg = JSON.stringify({
+                message: error.response.data.errorMessage,
+                domainname
+            })
+            res.cookie('verificationErrorMsg', verificationErrorMsg, {
                 httpOnly: true,
                 maxAge: 60 * 1000,
                 secure: true,

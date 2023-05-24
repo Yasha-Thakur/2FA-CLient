@@ -15,25 +15,26 @@
       </button>
     </div>
     <div class="wrapper">
-      <h1 class="h1-login">LOGIN</h1>
+      <% if(errorArray.length != 0){ %>
+      <div class="error-div">
+        <% errorArray.forEach((error) => { %>
+        <ul>
+          <li><%= error %></li>
+        </ul>
+        <% }) %>
+      </div>
+      <% }%> <% if(successMessage){ %>
+      <div class="msg" id="success">
+        <p><%= successMessage %></p>
+      </div>
+      <% } %> <% if(errorMessage){ %>
+      <div class="msg" id="error">
+        <p><%= errorMessage %></p>
+      </div>
+      <% } %>
       <div class="container">
-        <% if(errorArray.length != 0){ %>
-        <div class="error-div">
-          <% errorArray.forEach((error) => { %>
-          <ul>
-            <li><%= error %></li>
-          </ul>
-          <% }) %>
-        </div>
-        <% }%> <% if(successMessage){ %>
-        <div class="msg" id="success">
-          <p><%= successMessage %></p>
-        </div>
-        <% } %> <% if(errorMessage){ %>
-        <div class="msg" id="error">
-          <p><%= errorMessage %></p>
-        </div>
-        <% } %>
+        <h2 class="h1-login">LOGIN</h2>
+        <hr />
         <form class="form" action="/login" method="post">
           <div class="combine">
             <div class="div1">
@@ -43,7 +44,9 @@
                 class="textBox"
                 id="email"
                 name="email"
+                value="<%= body.email%>"
                 placeholder="abc@example.com"
+                required
               />
             </div>
             <div class="div2">
@@ -51,8 +54,10 @@
               <input
                 type="password"
                 class="textBox"
+                required
                 id="password"
                 name="password"
+                value="<%= body.password%>"
                 placeholder="password"
               />
             </div>

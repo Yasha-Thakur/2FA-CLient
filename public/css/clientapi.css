@@ -12,7 +12,7 @@ body {
 }
 
 .nav-bar {
-  background-color: #652c7eb3;
+  background-color: #207398;
   color: #eee;
   display: flex;
   align-items: center;
@@ -34,6 +34,11 @@ body {
   color: #eee;
 }
 
+.link-btn {
+  text-decoration: none;
+  color: #207398;
+}
+
 .btn-nav {
   text-align: center;
   width: 150px;
@@ -42,7 +47,7 @@ body {
   border-radius: 5px;
   font-size: 16px;
   font-weight: 600;
-  color: #652c7eb3;
+  color: #207398;
   background-color: #eee;
   text-decoration: none;
   box-shadow: 0px 4px 10px 1px #00000033;
@@ -103,7 +108,7 @@ h3 {
   border: none;
   border-radius: 7px;
   text-decoration: none;
-  background-color: #652c7eb3;
+  background-color: #207398;
   color: #eeeeee;
   font-size: 16px;
   font-weight: 600;
@@ -151,7 +156,7 @@ td {
   border: none;
   border-radius: 7px;
   text-decoration: none;
-  background-color: #652c7eb3;
+  background-color: #207398;
   color: #eeeeee;
   font-size: 16px;
   font-weight: 600;

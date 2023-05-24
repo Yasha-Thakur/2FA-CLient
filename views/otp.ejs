@@ -22,7 +22,13 @@
         <form action="/otp/<%= uuid %>" method="post">
           <div class="combine">
             <label>Enter OTP </label>
-            <input type="text" id="otpbox" name="otpValue" placeholder="OTP" />
+            <input
+              type="text"
+              id="otpbox"
+              autocomplete="off"
+              name="otpValue"
+              placeholder="OTP"
+            />
           </div>
           <button type="submit" id="submitBtn">SUBMIT</button>
         </form>

@@ -17,16 +17,15 @@ router.get('/register', (req, res) => {
 
 router.get('/login', (req, res) => {
     if (!req.cookies.token || !req.cookies.clientid) {
-        return res.render('login', { errorArray: [], successMessage: "", errorMessage: "" })
+        return res.render('login', { errorArray: [], successMessage: "", errorMessage: "", body: "" })
     }
     if (req.cookies.successMsg) {
         clearCookie('token')
         clearCookie('clientid')
         const successMessage = req.cookies.successMsg
         clearCookie('successMsg')
-        return res.render('login', { successMessage, errorArray: [], errorMessage: "" })
+        return res.render('login', { successMessage, errorArray: [], errorMessage: "", body: "" })
     }
-    //TODO   add condition to check whether successMessage is present in cookie or not. If present then manually delete the cookie of token, clientid and successMessage, then render login page with successMessage saved previously
     return res.redirect('/dashboard')
 })
 
@@ -73,7 +72,7 @@ router.post('/login', validateLogin, async (req, res) => {
     } catch (error) {
         if (error.response.data.error) {
             const errorMessage = error.response.data.errorMessage;
-            return res.render('login', { errorArray: [], successMessage: "", errorMessage })
+            return res.render('login', { errorArray: [], successMessage: "", errorMessage, body: req.body })
         }
         return res.send(error);
     }

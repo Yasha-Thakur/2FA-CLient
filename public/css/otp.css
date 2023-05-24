@@ -14,7 +14,7 @@ body {
 }
 
 .nav-bar {
-  background-color: #652c7eb3;
+  background-color: #207398;
   color: #eee;
   position: fixed;
   top: 0;
@@ -89,7 +89,7 @@ form {
   text-decoration: none;
   font-size: 20px;
   font-weight: 600;
-  background-color: #652c7eb3;
+  background-color: #207398;
   color: #eeeeee;
   box-shadow: 0px 4px 10px 1px #00000033;
 }

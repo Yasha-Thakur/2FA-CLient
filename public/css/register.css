@@ -14,7 +14,7 @@ body {
 }
 
 .nav-bar {
-  background-color: #652c7eb3;
+  background-color: #207398;
   color: #eeeeee;
   display: flex;
   align-items: center;
@@ -27,7 +27,7 @@ body {
 
 .link {
   text-decoration: none;
-  color: #652c7eb3;
+  color: #207398;
   font-weight: 600;
 }
 .login-btn {
@@ -42,8 +42,9 @@ body {
   box-shadow: 0px 4px 10px 1px #00000033;
 }
 
-.h1-reg {
-  margin-bottom: 25px;
+hr {
+  margin: 20px 0px 20px 0px;
+  width: 100%;
 }
 
 .error-div {
@@ -87,7 +88,7 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 400px;
+  width: 350px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
 }
@@ -141,7 +142,7 @@ form {
   text-decoration: none;
   font-size: 20px;
   font-weight: 600;
-  background-color: #652c7eb3;
+  background-color: #207398;
   color: #eeeeee;
   box-shadow: 0px 4px 10px 1px #00000033;
 }

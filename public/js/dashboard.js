@@ -6,7 +6,7 @@ addBtn.addEventListener('click', (e) => {
   wrapper.innerHTML = "";
   wrapper.innerHTML += `<div class="domain-name">
     <form action="/savedomain" method="post">
-      <input type="text" name="domainname" id="text-box" placeholder="Add Domain Name"/>
+      <input type="text" name="domainname" autocomplete="off" id="text-box" placeholder="Add Domain Name"/>
       <button type="submit" id="save-btn">Save</button>
     </form>
   </div>`;

@@ -73,10 +73,10 @@
                 <button type="submit" id="verify-btn">Verify Domain</button>
               </form>
             </div>
-            <% if(verifyMessage){ %>
+            <% if(domains[i].domainname == verificationErrorMsg.domainname){ %>
             <div class="verifyMsg">
               <h3>ERROR!</h3>
-              <p><%= verifyMessage%></p>
+              <p><%= verificationErrorMsg.message%></p>
             </div>
             <% } } %>
           </div>
